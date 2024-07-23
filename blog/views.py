@@ -4,7 +4,5 @@ from .models import Post
 
 # Create your views here.
 class PostList(generic.ListView):
-    # We can remove the model = Post as it is made redundant by the queryset explicitly stating all posts are displayed.
-    # model = Post
-    queryset = Post.objects.all()
+    queryset = Post.objects.filter(status=1)
     template_name = "post_list.html"
