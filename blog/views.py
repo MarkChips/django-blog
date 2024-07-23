@@ -1,5 +1,10 @@
 from django.shortcuts import render
-from django.http import HttpResponse
+from django.views import generic
+from .models import Post
+
 # Create your views here.
-def my_blog(request):
-    return HttpResponse('Hello, Blog!')
+class PostList(generic.ListView):
+    # We can remove the model = Post as it is made redundant by the queryset explicitly stating all posts are displayed.
+    # model = Post
+    queryset = Post.objects.all()
+    template_name = "post_list.html"
