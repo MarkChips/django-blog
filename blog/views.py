@@ -40,7 +40,7 @@ def post_detail(request, slug):
             )
 
     comment_form = CommentForm()
-
+    
     return render(request, "blog/post_detail.html", {
         "post": post,
         "comments": comments,
