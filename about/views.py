@@ -24,7 +24,7 @@ def about_me(request):
             messages.add_message(
                 request,
                 messages.SUCCESS,
-                "Collaboration request received! I endeavor to respond within 2 working days."
+                "Collaboration request received! I endeavour to respond within 2 working days."
             )
 
     about = About.objects.all().order_by('-updated_on').first()
